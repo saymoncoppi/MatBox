@@ -1,0 +1,16 @@
+<div style=" text-align: center;">
+  {% if user.is_authenticated %}
+  <h1>Already Logged!</h1>
+  <form action="{% url 'logout' %}" method="POST" id ="logout" class="btn btn-primary btn-lg btn-block">
+    {% csrf_token %}
+    <input type="submit" value="Logout">
+  </form>
+  {% else %}
+  <h2>LOGIN</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">LOGIN</button>
+  </form>
+  {% endif %}
+</div>
