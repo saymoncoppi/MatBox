@@ -21,13 +21,16 @@
     {% if user.is_authenticated %}
 
         <h1>Menu</h1>
-        <a href="{% url 'appointment_mobile' %}" class="btn btn-primary btn-lg btn-block">Appointment</a> 
+        <a href="{% url 'appointment_mobile_v1' %}" class="btn btn-primary btn-lg btn-block">Appointment v1</a> 
+        <br />
+        <a href="{% url 'appointment_mobile_v2' %}" class="btn btn-primary btn-lg btn-block">Appointment v2</a> 
         <br />
         <form action="{% url 'logout' %}" method="POST" id ="logout" class="btn btn-primary btn-lg btn-block">
             {% csrf_token %}
             <input type="submit" value="Logout">
         </form>
     {% else %}
+        <br />
         <a href="{% url 'login' %}" class="btn btn-primary btn-lg btn-block">LOGIN</a> 
 
     {% endif %}

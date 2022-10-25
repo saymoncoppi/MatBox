@@ -8,8 +8,9 @@ urlpatterns = [
     path("", index),
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
-    path("appointment_mobile", appointment_mobile, name="appointment_mobile"),
-    path("logout", pagelogout, name='logout'),
+    path("appointment_mobile_v1", appointment_mobile_v1, name="appointment_mobile_v1"),
+    path("appointment_mobile_v2", appointment_mobile_v2, name="appointment_mobile_v2"),
+    path("logout", pagelogout, name="logout"),
 ]
 
 # if settings.DEBUG:
